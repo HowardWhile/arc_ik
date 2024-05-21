@@ -23,15 +23,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // -------------------------------------
     // ROS subscriber
     // -------------------------------------
-    this->subscriber_ = node_->create_subscription<std_msgs::msg::String>(
-        "ros2qt_sub", 10,
-        [&](const std_msgs::msg::String::SharedPtr msg)
-        {
-            // Handle received message
-            QString receivedMsg = QString::fromStdString(msg->data);
-            RCLCPP_INFO(this->node_->get_logger(), "Subscribe message: %s", msg->data.c_str() );
-            ui->tbox_sub_info->append(receivedMsg);
-        });
+//    this->subscriber_ = node_->create_subscription<std_msgs::msg::String>(
+//        "ros2qt_sub", 10,
+//        [&](const std_msgs::msg::String::SharedPtr msg)
+//        {
+//            // Handle received message
+//            QString receivedMsg = QString::fromStdString(msg->data);
+//            RCLCPP_INFO(this->node_->get_logger(), "Subscribe message: %s", msg->data.c_str() );
+//            ui->tbox_sub_info->append(receivedMsg);
+//        });
 
     // -------------------------------------
     this->initSpin();
@@ -65,13 +65,13 @@ void MainWindow::initSpin(void)
 
 void MainWindow::on_btn_pub_clicked()
 {
-    std::string text = ui->tbox_pub_msg->text().toStdString();
-    RCLCPP_INFO(this->node_->get_logger(), "Publish message: %s", text.c_str() );
+//    std::string text = ui->tbox_pub_msg->text().toStdString();
+//    RCLCPP_INFO(this->node_->get_logger(), "Publish message: %s", text.c_str() );
 
-    std_msgs::msg::String msg;
-    msg.data = text;
+//    std_msgs::msg::String msg;
+//    msg.data = text;
 
-    // Publish the ROS message
-    publisher_->publish(msg);
+//    // Publish the ROS message
+//    publisher_->publish(msg);
 }
 

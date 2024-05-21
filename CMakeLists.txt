@@ -31,6 +31,7 @@ add_executable(ui
   src/mainwindow.cpp
   src/mainwindow.h
   src/mainwindow.ui
+  myjointbar.h myjointbar.cpp myjointbar.ui
 )
 
 # ------------------------------------------
@@ -61,6 +62,7 @@ ament_target_dependencies(ui
 set_target_properties(ui PROPERTIES AUTOMOC ON)
 set_target_properties(ui PROPERTIES AUTOUIC ON)
 set_target_properties(ui PROPERTIES AUTORCC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # ------------------------------------------
 
 # Install executable
